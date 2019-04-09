@@ -23,7 +23,7 @@ public class Main {
             ((BufferedWriter) w).newLine();
             w.write("Funtik");
             ((BufferedWriter) w).newLine();
-            w.write("Would you like");
+            w.write("Would");
             ((BufferedWriter) w).newLine();
             w.write("a cup of tea");
             ((BufferedWriter) w).newLine();
