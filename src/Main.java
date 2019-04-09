@@ -19,7 +19,7 @@ public class Main {
             ((BufferedWriter) w).newLine();
             w.write("LuntiK");
             ((BufferedWriter) w).newLine();
-            w.write("Pultik");
+            w.write("Putin");
             ((BufferedWriter) w).newLine();
             w.write("Funtik");
             ((BufferedWriter) w).newLine();
