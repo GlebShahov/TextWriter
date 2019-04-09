@@ -31,7 +31,7 @@ public class Main {
             ((BufferedWriter) w).newLine();
             w.write("BPM");
             ((BufferedWriter) w).newLine();
-            w.write("FM");
+            w.write("F");
             w.close();
         }
         catch (IOException e){
