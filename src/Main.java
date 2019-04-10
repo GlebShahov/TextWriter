@@ -25,13 +25,6 @@ public class Main {
             ((BufferedWriter) w).newLine();
             w.write("Would");
             ((BufferedWriter) w).newLine();
-            w.write("a cup of tea");
-            ((BufferedWriter) w).newLine();
-            w.write("who i am");
-            ((BufferedWriter) w).newLine();
-            w.write("BPM");
-            ((BufferedWriter) w).newLine();
-            w.write("F");
             w.close();
         }
         catch (IOException e){
