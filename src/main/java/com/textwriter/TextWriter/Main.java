@@ -1,4 +1,4 @@
-import javax.imageio.IIOException;
+package com.textwriter.TextWriter;
 import java.io.*;
 
 public class Main {
