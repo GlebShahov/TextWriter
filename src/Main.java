@@ -14,12 +14,7 @@ public class Main {
             OutputStreamWriter streamWriter = new OutputStreamWriter(is);
             Writer w = new BufferedWriter(streamWriter);
 
-            w.write("a cup of tea");
-            ((BufferedWriter) w).newLine();
-            w.write("who i am");
-            ((BufferedWriter) w).newLine();
-            w.write("BPM");
-            ((BufferedWriter) w).newLine();
+
             w.write("F");
             w.close();
         }
