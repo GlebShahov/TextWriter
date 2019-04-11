@@ -13,8 +13,13 @@ public class Main {
             FileOutputStream is = new FileOutputStream(textFile);
             OutputStreamWriter streamWriter = new OutputStreamWriter(is);
             Writer w = new BufferedWriter(streamWriter);
+            w.write("F");
+            ((BufferedWriter) w).newLine();
+            ((BufferedWriter) w).newLine();
+            ((BufferedWriter) w).newLine();
 
-
+            w.write("F");
+            w.write("F");
             w.write("F");
             w.close();
         }
