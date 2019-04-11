@@ -13,18 +13,7 @@ public class Main {
             FileOutputStream is = new FileOutputStream(textFile);
             OutputStreamWriter streamWriter = new OutputStreamWriter(is);
             Writer w = new BufferedWriter(streamWriter);
-            w.write("Hello");
-            ((BufferedWriter) w).newLine();
-            w.write("My name is Rudik");
-            ((BufferedWriter) w).newLine();
-            w.write("LuntiK");
-            ((BufferedWriter) w).newLine();
-            w.write("Pultik");
-            ((BufferedWriter) w).newLine();
-            w.write("Funtik");
-            ((BufferedWriter) w).newLine();
-            w.write("Would you like");
-            ((BufferedWriter) w).newLine();
+
             w.write("a cup of tea");
             ((BufferedWriter) w).newLine();
             w.write("who i am");
