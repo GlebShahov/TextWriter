@@ -44,6 +44,7 @@ public class ThiefTask implements Runnable {
     }
     // на вход вещи из которых нужно выбрать, на выход вещи которые засунуться в рюкзак
     private List<Thing> solveTask(List<Thing> things) {
+        
         return new ArrayList<Thing>(things);
     }
 }
