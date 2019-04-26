@@ -26,7 +26,7 @@ public class Main {
 
     public static void main(String[] args)  {
         Home home = new Home();
-        ExecutorService es = Executors.newFixedThreadPool(15);
+        ExecutorService es = Executors.newFixedThreadPool(20);
         for (int i = 0; i < 4; i++) {
             es.execute(new OwnerTask(new Owner("Владелец_" + i), home));
         }

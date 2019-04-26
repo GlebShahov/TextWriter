@@ -18,7 +18,7 @@ public class ThiefTask implements Runnable {
 
     @Override
     public void run() {
-        while (true) {
+
             //входим в дом
             home.enterHome(thief);
             //получаем вещи в доме
@@ -31,7 +31,7 @@ public class ThiefTask implements Runnable {
             List<Thing> homeThings = home.getThings();
             // смотрим какие вещи нужны
             List<Thing> neededThings = solveTask(homeThings);
-            Main.sleep(500, 1000);//имитация работы, иначе очень быстро
+       //     Main.sleep(500, 1000);//имитация работы, иначе очень быстро
             // забираем их в рюкзак
             System.out.println(thief.getName() + " забрал вещи " + neededThings);
             thief.getBackPack().getThings().addAll(neededThings);
@@ -39,8 +39,8 @@ public class ThiefTask implements Runnable {
             //выходим из дома
             home.exitHome(thief);
             //спим до следующего захода в дом
-            Main.sleep(2000, 5000);
-        }
+         //   Main.sleep(2000, 5000);
+
     }
     // на вход вещи из которых нужно выбрать, на выход вещи которые засунуться в рюкзак
     private List<Thing> solveTask(List<Thing> things) {
