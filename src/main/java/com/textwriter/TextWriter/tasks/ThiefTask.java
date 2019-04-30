@@ -4,12 +4,11 @@ import com.textwriter.TextWriter.Home;
 import com.textwriter.TextWriter.Main;
 import com.textwriter.TextWriter.POJO.Thing;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ThiefTask implements Runnable {
-    Home home;
-    Thief thief;
+    private Home home;
+    private Thief thief;
 
     public ThiefTask( Thief thief, Home home) {
         this.home = home;
@@ -23,28 +22,29 @@ public class ThiefTask implements Runnable {
             home.enterHome(thief);
             //получаем вещи в доме
             // получаем вещи в рюкзаке
-            List<Thing> backpackThings = thief.getBackPack().getThings();
+            List<Thing> backpackThings = thief.getKnapsack().getBestThings();
             // Смешиваем вещи в кучу в доме и чистим рюкзак
             home.putThing(backpackThings);
-            thief.getBackPack().getThings().clear();
+            thief.getKnapsack().getBestThings().clear();
             // получаем список всех вещей
             List<Thing> homeThings = home.getThings();
             // смотрим какие вещи нужны
-            List<Thing> neededThings = solveTask(homeThings);
-       //     Main.sleep(500, 1000);//имитация работы, иначе очень быстро
+            thief.getKnapsack().makeAllSets(homeThings);
+            System.out.println("Че там по рюкзаку в кгешечках " + thief.getKnapsack().getMaxWeight());
+            List<Thing> solve = thief.getKnapsack().getBestThings();
+            //     List<Thing> neededThings = solveTask(homeThings);
+            Main.sleep(500, 1000);//имитация работы, иначе очень быстро
             // забираем их в рюкзак
-            System.out.println(thief.getName() + " забрал вещи " + neededThings);
-            thief.getBackPack().getThings().addAll(neededThings);
-            home.removeThings(neededThings);
+            System.out.println(thief.getName() + " забрал вещи " + solve);
+            thief.getKnapsack().getBestThings().addAll(solve);
+            home.removeThings(solve);
             //выходим из дома
             home.exitHome(thief);
-            //спим до следующего захода в дом
-         //   Main.sleep(2000, 5000);
+            //спим до следующего залезания в дом раза
+            Main.sleep(2000, 5000);
+
 
     }
-    // на вход вещи из которых нужно выбрать, на выход вещи которые засунуться в рюкзак
-    private List<Thing> solveTask(List<Thing> things) {
-        
-        return new ArrayList<Thing>(things);
-    }
+
 }
+

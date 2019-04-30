@@ -25,13 +25,15 @@ public class OwnerTask implements Runnable {
             //кладем вещи в дом
             home.putThing(owner.getThings());
             System.out.println(owner.getName() + " положил вещь " + thing);
-           // Main.sleep(500, 1000);//иначе очень быстро
+            Main.sleep(500, 1000);//иначе очень быстро
             // убираем из рюкзака
             owner.getThings().clear();
             //выходим из дома
             home.exitHome(owner);
             //спим до следующего раза
-           // Main.sleep(3000, 5000);
+            //
+            Main.sleep(3000, 5000);
+
 
     }
 }
