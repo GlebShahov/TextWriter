@@ -13,27 +13,14 @@ import java.util.concurrent.Executors;
 
 public class Main {
 
-    public static Random r = new Random();
-
-    public static void sleep(int start, int end) {
-        try {
-            int sleep = start + r.nextInt(end - start);
-            Thread.sleep(sleep);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
     public static void main(String[] args)  {
         Home home = new Home();
         ExecutorService es = Executors.newFixedThreadPool(28);
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 10; i++) {
             es.execute(new OwnerTask(new Owner("Владелец_" + i), home));
         }
-        for (int i = 0; i < 5; i++) {
-            es.execute(new ThiefTask(new Thief("Вор_" + i, (i + 3) * 5), home));
+        for (int i = 0; i < 10; i++) {
+            es.execute(new ThiefTask(new Thief("Вор_" + i, RandomGenerate.generateKnapsackWeight()), home));
         }
-
     }
-
 }

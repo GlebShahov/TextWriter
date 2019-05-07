@@ -8,12 +8,13 @@ import com.textwriter.TextWriter.tasks.Thief;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Home {
     private List<Thing> things = Collections.synchronizedList(new ArrayList<Thing>());
     private final Object syncObj = new Object();
     private int ownerCount = 0;
-    private boolean thiefInHome = false;
+    private volatile boolean thiefInHome = false;
 
     public List<Thing> getThings() {
         return things;
@@ -28,7 +29,7 @@ public class Home {
     }
 
     public void enterHome(Owner owner){
-        synchronized (syncObj){
+       synchronized (syncObj){
             while (true){
                 if(thiefInHome) {
                     System.out.println(owner.getName() + " не может зайти, вор в доме. Ждем пока выйдет");
